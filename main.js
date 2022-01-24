@@ -19,6 +19,8 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    // take in players choice and computers choice and determine the winner.
+    // returns string declaring winner
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
@@ -52,6 +54,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     // run 5 rounds of rock paper scissors
+    // returns nothing
     let playerSelection;
     for (let i=0; i < 5; i++) {
         playerSelection = prompt("Select Paper, Rock or Scissors: ", "").toLowerCase();
