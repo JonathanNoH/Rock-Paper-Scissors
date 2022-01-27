@@ -25,7 +25,8 @@ button {
     padding: 10px;
 }
 
-.playByPlay {
+.playByPlay,
+.finalResult {
     display: flex;
     justify-content: center;
     margin: 15px;

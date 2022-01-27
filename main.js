@@ -62,15 +62,28 @@ function adjustScore(result) {
     switch (result) {
         case "win":
             playerScore.innerText = +(playerScore.innerText) + 1;
+            if (+(playerScore.innerText) >= 5) {
+                finalResult.innerText = "You got to 5 first - You win! Scores reset."
+                resetScores();
+            }
             return;
         case "lose":
             computerScore.innerText = +(computerScore.innerText) + 1;
+            if (+(computerScore.innerText) >= 5) {
+                finalResult.innerText = "Computer got to 5 first - You lose. Scores reset."
+                resetScores();
+            }
             return;
         case "tie":
             return;
         default:
             console.log("Something went terribly wrong");
     }
+}
+
+function resetScores() {
+    playerScore.innerText = "0";
+    computerScore.innerText = "0";
 }
 
 const playerScore = document.querySelector("#playerScore");
@@ -81,6 +94,7 @@ const scissors = document.querySelector(".scissors");
 const paper = document.querySelector(".paper");
 
 const playByPlay = document.querySelector(".playByPlay");
+const finalResult = document.querySelector(".finalResult");
 
 rock.addEventListener('click',
         function() { adjustScore(playRound("rock", computerPlay())); }
