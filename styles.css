@@ -1,0 +1,26 @@
+.names,
+.scores {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    
+}
+
+.score {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px;
+}
