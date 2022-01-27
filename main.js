@@ -24,26 +24,26 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        return "tie";
     }
     switch (playerSelection) {
         case "rock":
             if (computerSelection === "scissors") {
-                return "Rock beats Scissors -- You win!";
+                return "win";
             } else {
-                return "Paper beats Rock -- You lose!";
+                return "lose";
             }
         case "paper":
             if (computerSelection === "rock") {
-                return "Paper beats Rock -- You win!";
+                return "win";
             } else {
-                return "Scissors beats Paper -- You lose!";
+                return "lose";
             }
         case "scissors":
             if (computerSelection === "paper") {
-                return "Scissors beats Paper -- You win!";
+                return "win";
             } else {
-                return "Rock beats Scissors -- You lose!";
+                return "lose";
             }
         default:
             console.log("Something went terribly wrong");
@@ -51,18 +51,36 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function adjustScore(result) {
+    switch (result) {
+        case "win":
+            playerScore.innerText = +(playerScore.innerText) + 1;
+            return;
+        case "lose":
+            computerScore.innerText = +(computerScore.innerText) + 1;
+            return;
+        case "tie":
+            return;
+        default:
+            console.log("Something went terribly wrong");
+    }
+}
+
+const playerScore = document.querySelector("#playerScore");
+const computerScore = document.querySelector("#computerScore");
+
 const rock = document.querySelector(".rock");
 const scissors = document.querySelector(".scissors");
 const paper = document.querySelector(".paper");
 
 rock.addEventListener('click',
-        function() { console.log(playRound("rock", computerPlay())); }
+        function() { adjustScore(playRound("rock", computerPlay())); }
     );
 
 scissors.addEventListener('click',
-        function() { console.log(playRound("scissors", computerPlay())); }
+        function() { adjustScore(playRound("scissors", computerPlay())); }
 );
 
 paper.addEventListener('click',
-        function() { console.log(playRound("paper", computerPlay())); }
+        function() { adjustScore(playRound("paper", computerPlay())); }
     );
