@@ -24,3 +24,9 @@
 button {
     padding: 10px;
 }
+
+.playByPlay {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}

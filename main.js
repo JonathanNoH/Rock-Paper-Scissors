@@ -73,6 +73,8 @@ const rock = document.querySelector(".rock");
 const scissors = document.querySelector(".scissors");
 const paper = document.querySelector(".paper");
 
+const playByPlay = document.querySelector(".playByPlay");
+
 rock.addEventListener('click',
         function() { adjustScore(playRound("rock", computerPlay())); }
     );
