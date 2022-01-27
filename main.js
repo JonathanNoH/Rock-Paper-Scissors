@@ -24,25 +24,32 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     if (playerSelection === computerSelection) {
+        playByPlay.innerText = `You both chose ${playerSelection}! It's a tie!`;
         return "tie";
     }
     switch (playerSelection) {
         case "rock":
             if (computerSelection === "scissors") {
+                playByPlay.innerText = "You chose rock. Computer chose scissors. You win!";
                 return "win";
             } else {
+                playByPlay.innerText = "You chose rock. Computer chose paper. You lose.";
                 return "lose";
             }
         case "paper":
             if (computerSelection === "rock") {
+                playByPlay.innerText = "You chose paper. Computer chose rock. You win!";
                 return "win";
             } else {
+                playByPlay.innerText = "You chose paper. Computer chose scissors. You lose.";
                 return "lose";
             }
         case "scissors":
             if (computerSelection === "paper") {
+                playByPlay.innerText = "You chose scissors. Computer chose paper. You win!";
                 return "win";
             } else {
+                playByPlay.innerText = "You chose scissors. Computer chose rock. You lose.";
                 return "lose";
             }
         default:
