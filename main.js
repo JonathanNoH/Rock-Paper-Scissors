@@ -51,4 +51,18 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const rock = document.querySelector(".rock");
+const scissors = document.querySelector(".scissors");
+const paper = document.querySelector(".paper");
 
+rock.addEventListener('click',
+        function() { console.log(playRound("rock", computerPlay())); }
+    );
+
+scissors.addEventListener('click',
+        function() { console.log(playRound("scissors", computerPlay())); }
+);
+
+paper.addEventListener('click',
+        function() { console.log(playRound("paper", computerPlay())); }
+    );
