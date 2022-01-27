@@ -52,27 +52,3 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-function game() {
-    // run 5 rounds of rock paper scissors
-    // returns nothing
-    let playerSelection;
-    for (let i=0; i < 5; i++) {
-        playerSelection = prompt("Select Paper, Rock or Scissors: ", "").toLowerCase();
-        let computerSelection = computerPlay();
-        console.log(`Computer picked ${computerSelection}`);
-        console.log(playRound(playerSelection, computerSelection));
-    }
-}
-
-
-
-while (true) {
-    let ans = prompt("Would you like to play a game? (y/n)");
-    if (ans === "y") {
-        game();
-    } else if (ans === "n") {
-        break;
-    } else {
-        console.log("Please enter \"y\" or \"n\"");
-    }
-}
